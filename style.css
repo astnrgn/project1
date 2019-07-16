@@ -1,28 +1,39 @@
+body {
+  font-family: "Squada One", sans-serif;
+  font-weight: bolder;
+}
 header {
-  border: 2px solid black;
-  background: grey;
+/*  border: 2px solid black;
+  background: grey;*/
   text-align: center; 
 }
-h1 {
+/*h1 {
   border: 2px solid black;
   background: white;  
+}*/
+#guide {
+  margin: 0 auto 1%;
 }
 main {
-  border: 2px solid black;
-  background: orange;
+/*  border: 2px solid black;
+  background: orange;*/
   display: flex;
   justify-content: center;
 }
-#game {
+#game-window {
   border: 2px solid black;
   background: blue;
   display: grid;
-  grid-template-rows: 50px 125px 100px 300px 5px 50px;
+  grid-template-rows: 15px 125px 100px 325px 15px 50px;
   grid-template-columns: 200px 200px 200px;
 }
+
+
+
+
 #top {
-  border: 2px solid black;
-  background: red;
+/*  border: 2px solid black;
+  background: red;*/
   grid-row: 2 / span 1;
   grid-column: 1 / span 3;
   display: flex;
@@ -31,7 +42,7 @@ main {
 #top-grid {
   display: grid;
   grid-template-rows: 50px 50px;
-  grid-template-columns: 75px 75px 75px;
+  grid-template-columns: 100px 100px 100px;
   text-align: center;
 }
 #theme-catagory {
@@ -50,6 +61,8 @@ main {
   border: 2px solid black;
   background: gold;  
 }
+
+
 
 
 
@@ -91,15 +104,64 @@ main {
 
 
 #game-board {
-  border: 2px solid black;
-  background: yellow;
+  background: black;
   grid-row: 4 / span 1;
-  grid-column: 1 / span 3;  
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: center;
+  margin: auto 22%;
 }
+#game-grid {
+  display: grid;
+  grid-template-rows: 125px 50px 125px;
+  grid-template-columns: 125px 75px 125px;
+  text-align: center;
+}
+#green {
+  border: 2px solid black;
+  background: green;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
+#red {
+  border: 2px solid black;
+  background: red;
+  grid-row: 1 / span 1;
+  grid-column: 3 / span 1;
+}
+#simon {
+  border: 2px solid black;
+  background: grey;
+  grid-row: 2 / span 1;
+  grid-column: 2 / span 1;  
+}
+#yellow {
+  border: 2px solid black;
+  background: yellow; 
+  grid-row: 3 / span 1;
+  grid-column: 1 / span 1; 
+}
+#blue {
+  border: 2px solid black;
+  background: blue; 
+  grid-row: 3 / span 1;
+  grid-column: 3 / span 1; 
+}
+
+
+
+
+
+
+
+
+
 #reset {
   border: 2px solid black;
   background: gold;
   grid-row: 6 / span 1;
   grid-column: 2 / span 1;
   text-align: center;
+  margin: 0 auto;
+  padding: 0 5% 0;
 }

@@ -1,68 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <link href="style.css" rel="stylesheet" type="text/css">
-    <title>Simon Game</title>
+  <meta charset="utf-8">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Squada+One&display=swap" rel="stylesheet">
+  <title>Simon Game</title>
 </head>
 <body>
-    <header>
-        <h1>Simon: Watch, Remember, Repeat!</h1>
-    </header>
-    <main>
-    <div id="game">
-    <div id="top">
-      <div id="top-grid">
-        <div id="theme-catagory">
+  <header>
+    <h1>SIMON: Watch, Remember, Repeat!</h1>
+    <p id="guide">[Click on "SIMON" to Begin]</p>
+  </header>
+  <main>
+    <div id="game-window">
+      <div id="top">
+        <div id="top-grid">
+          <div id="theme-catagory">
             <p>Theme</p>
-        </div>
-            <div class="theme-option">
-        	<p>Standard</p>
-            </div>
-            <div class="theme-option">
+          </div>
+          <div class="theme-option">
+            <p>Standard</p>
+          </div>
+          <div class="theme-option">
             <p>Space</p>
-            </div>
-        <div id="mode-catagory">
+          </div>
+          <div id="mode-catagory">
             <p>Mode</p>
+          </div>
+          <div class="mode-option">
+            <p>Normal</p>
+          </div>
+          <div class="mode-option">
+            <p>Hard</p>
+          </div>
         </div>
-            <div class="mode-option">
-        	    <p>Normal</p>
-            </div>
-            <div class="mode-option">
-        	    <p>Hard</p>
-            </div>
+      </div>
+      <div id="score-box">
+        <div id="score-grid">
+          <div id="score-title">
+            <p id="score-amount">SCORE</p>
+          </div>
+          <div id="score-counter">
+            <p>0</p>
+          </div>
         </div>
+      </div>
+      <div id="game-board">
+        <div id="game-grid">
+          <div class="game-div" id="green">
+          </div>
+          <div class="game-div" id="red">
+          </div>
+          <div id="simon">
+            <p>SIMON</p>
+          </div>
+          <div class="game-div" id="yellow">
+          </div>
+          <div class="game-div" id="blue">
+          </div>
+        </div>
+      </div>
+
+      <div id="reset">
+        <p>RESET</p>
+      </div>
     </div>
-   <div id="score-box">
-   	  <div id="score-grid">
-       <div id="score-title">
-       	  <p id="score-amount">SCORE</p>
-       </div>
-       <div id="score-counter">
-       	  <p>0</p>
-       </div>
-     </div>
-    </div>
-    	<div id="game-board">GAME
-<!--             <div class="game-div" id="green">
-                ONE
-            </div>
-            <div class="game-div" id="red">
-                TWO
-            </div>
-            <div class="game-div" id="yellow">
-                THREE
-            </div>
-            <div class="game-div" id="blue">
-                FOUR
-            </div> -->
-        </div>
-        
-        <div id="reset">
-        	<p>RESET</p>
-        </div>
-    </div>
-    </main>
-<script src="main.js"></script>
+  </main>
+  <script src="main.js"></script>
 </body>
 </html>
