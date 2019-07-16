@@ -1,0 +1,46 @@
+header {
+  border: 2px solid black;
+  background: grey;
+  text-align: center; 
+}
+h1 {
+  border: 2px solid black;
+  background: white;  
+}
+main {
+  border: 2px solid black;
+  background: orange;
+  display: flex;
+  justify-content: center;
+}
+#game {
+  border: 2px solid black;
+  background: blue;
+  display: grid;
+  grid-template-rows: 50px 100px 100px 300px 50px;
+  grid-template-columns: 200px 200px 200px;
+}
+#top {
+  border: 2px solid black;
+  background: red;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 3;  
+}
+#score-box {
+  border: 2px solid black;
+  background: cyan;
+  grid-row: 3 / span 1;
+  grid-column: 2 / span 1;    
+}
+#game-board {
+  border: 2px solid black;
+  background: yellow;
+  grid-row: 4 / span 1;
+  grid-column: 1 / span 3;  
+}
+#reset {
+  border: 2px solid black;
+  background: gold;
+  grid-row: 5 / span 1;
+  grid-column: 2 / span 1;  
+}
