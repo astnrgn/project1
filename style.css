@@ -17,21 +17,79 @@ main {
   border: 2px solid black;
   background: blue;
   display: grid;
-  grid-template-rows: 50px 100px 100px 300px 50px;
+  grid-template-rows: 50px 125px 100px 300px 5px 50px;
   grid-template-columns: 200px 200px 200px;
 }
 #top {
   border: 2px solid black;
   background: red;
   grid-row: 2 / span 1;
-  grid-column: 1 / span 3;  
+  grid-column: 1 / span 3;
+  display: flex;
+  justify-content: center;
 }
+#top-grid {
+  display: grid;
+  grid-template-rows: 50px 50px;
+  grid-template-columns: 75px 75px 75px;
+  text-align: center;
+}
+#theme-catagory {
+  border: 2px solid black;
+  background: cyan;  
+}
+.theme-option {
+  border: 2px solid black;
+  background: yellow;  
+}
+#mode-catagory {
+  border: 2px solid black;
+  background: orange;  
+}
+.mode-option {
+  border: 2px solid black;
+  background: gold;  
+}
+
+
+
 #score-box {
   border: 2px solid black;
   background: cyan;
   grid-row: 3 / span 1;
-  grid-column: 2 / span 1;    
+  grid-column: 2 / span 1;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
+#score-grid {
+  display: grid;
+  grid-template-rows: 45px 45px;
+  grid-template-columns: 100px;
+  text-align: center;
+}
+#score-title {
+  border: 2px solid black;
+  background: white;
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+}
+#score-counter {
+  border: 2px solid black;
+  background: green;
+  grid-row: 2 / span 1;
+  grid-column: 1 / span 1;
+}
+
+
+
+
+
+
+
+
+
+
 #game-board {
   border: 2px solid black;
   background: yellow;
@@ -41,6 +99,7 @@ main {
 #reset {
   border: 2px solid black;
   background: gold;
-  grid-row: 5 / span 1;
-  grid-column: 2 / span 1;  
+  grid-row: 6 / span 1;
+  grid-column: 2 / span 1;
+  text-align: center;
 }
