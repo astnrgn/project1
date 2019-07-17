@@ -2,6 +2,7 @@ var scoreCounter = document.querySelector("#score-number");
 var score = scoreCounter.innerHTML;
 var simonPattern = [];
 var playerPattern = [];
+var timeInterval = 1000;
 
 
 $("#simon").click(function(evt) {
@@ -21,7 +22,7 @@ var blink = (array) => {
   var interval = setInterval(function() {
     $("#" + array[i]).fadeTo(200, 0.4).fadeTo(200, 1);
     i++;
-  }, 1000);
+  }, timeInterval);
 };
 
 
@@ -61,7 +62,7 @@ $("#reset").click(function(evt) {
 $("#theme-option-space").click(function(evt) {
   evt.preventDefault();
     $("body").css( {
-      "background" : "url(images/space-background2.gif)",
+      "background" : "url(images/space-background.gif)",
       "backgroundSize" : "cover",
       "backgroundPosition" : "center center",
       "backgroundRepeat" : "no-repeat"
@@ -75,20 +76,50 @@ $("#theme-option-space").click(function(evt) {
     document.querySelector("#theme-option-standard").style.background = "white";
 
     document.querySelector("header").style.color = "white";
+
+    document.querySelector("#score-counter").style.background = "black";
 });
 
 
+$("#theme-option-standard").click(function(evt) {
+  evt.preventDefault();
+    $("body").css( {
+      "background" : "white",
+    });
+
+    $('.space-switch').css("border", "2px solid black");
+    $('.space-switch-catagory').css("borderRight", "2px solid black");
+    $('.space-switch-catagory').css("color", "black");
+
+    document.querySelector("#theme-option-standard").style.background = "rgb(170,170,170)";
+    document.querySelector("#theme-option-space").style.background = "white";
+
+    document.querySelector("header").style.color = "black";
+
+    document.querySelector("#score-counter").style.background = "white";
+});
 
 
 
 $("#mode-option-hard").click(function(evt) {
   evt.preventDefault();
-  setInterval(var createPattern = (array) => {
-    var colors = ["green", "red", "yellow", "blue"];
-    array.push(colors[Math.floor(Math.random() * colors.length)]);
-  }, 1000);
-
+  
+  clearInterval(timeInterval);
+  timeInterval = 350;
+  console.log(timeInterval);
 
   document.querySelector("#mode-option-hard").style.background = "rgb(170,170,170)";
   document.querySelector("#mode-option-normal").style.background = "white";
+});
+
+
+$("#mode-option-normal").click(function(evt) {
+  evt.preventDefault();
+
+  clearInterval(timeInterval);
+  timeInterval = 1000;
+  console.log(timeInterval);
+
+  document.querySelector("#mode-option-normal").style.background = "rgb(170,170,170)";
+  document.querySelector("#mode-option-hard").style.background = "white";
 });
