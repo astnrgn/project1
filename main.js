@@ -1,7 +1,3 @@
-var simonStartSquare = document.querySelector("#simon")
-var gameSquares = document.querySelectorAll(".game-div")
-var resetButton = document.querySelector("#reset");
-var possibilities = ["green", "red", "yellow", "blue"]; 
 var scoreCounter = document.querySelector("#score-number");
 var score = scoreCounter.innerHTML;
 
@@ -11,53 +7,53 @@ var playerPatternArray = [];
 
 
 
-simonStartSquare.addEventListener("click", function(evt) {
-  startGame();
-  console.log("game has started");
+$("#simon").click(function(evt) {
+  play();
 });
 
 
 
-function startGame() {
-  pattern(simonPatternArray);
-
-  for (let i = 0; i < gameSquares.length; i++) {
-    gameSquares[i].addEventListener("click", function(evt) {
-      evt.preventDefault();
-      $(this).fadeTo(150, 0.4).fadeTo(150, 1);
-      playerPatternArray.push(this.id);
-      console.log(playerPatternArray);
-      check(simonPatternArray, playerPatternArray);
-    })
-  }
-};
-
-
-
-function check(array1, array2) {
- if (JSON.stringify(array1) == JSON.stringify(array2)) {
-    console.log("win");
-    score++;
-    scoreCounter.innerHTML = score;
-  } else {
-    console.log("loss.");
-
-  }
-};
-
-
-
-function pattern(array) {
-  var randomColor = possibilities[Math.floor(Math.random() * possibilities.length)];
-  array.push(randomColor);
+function createPattern(array) {
+  var possibilities = ["green", "red", "yellow", "blue"];
+  array.push(possibilities[Math.floor(Math.random() * possibilities.length)]);
   console.log(array);
 };
 
 
 
+function blink(array) {
+  var i = 0;
+  var interval = setInterval(function() {
+    $("#" + array[i]).fadeTo(200, 0.4).fadeTo(200, 1);
+    i ++;
+  }, 1000);
+};
 
-reset.addEventListener("click", function(evt) {
+
+function play() {
+  createPattern(simonPatternArray);
+  blink(simonPatternArray);
+
+  $(".game-div").off("click").on("click", function() {
+    $(this).fadeTo(200, 0.4).fadeTo(200, 1);
+    playerPatternArray.push($(this).attr("id"));
+    for (var i = 0; i < playerPatternArray.length; i++) {
+      if (JSON.stringify(simonPatternArray) == JSON.stringify(playerPatternArray)) {
+        playerPatternArray = [];
+        score++;
+        scoreCounter.innerHTML = score;
+        play();
+        break;
+      } else if (playerPatternArray[i] !== simonPatternArray[i]) {
+        alert("Sorry, try again!");
+        break;
+      }
+    }
+  })
+};
+
+
+
+$("#reset").click(function(evt) {
   location.reload();
 });
-
-
