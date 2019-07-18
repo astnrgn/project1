@@ -16,15 +16,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-* [Fork this repository]
+* Fork this repository
 
-* [Clone the forked version to your local repository]
+* Clone the forked version to your local repository
 
-* [Open your cloned repository in your favorite text editor]
+* Open your cloned repository in your favorite text editor
 
-* [Open the index.html file in your favorite browser]
+* Open the index.html file in your favorite browser
 
-* [Have Fun!]
+* Have Fun!
 
 <br/><br/>
 
