@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Have Fun!
 ```
 
-<img src="examples/simon-instruction.gif" width="70%" height="70%">
+<img src="examples/simon-instruction.gif" width="80%" height="80%">
 
 
 ## Built With
