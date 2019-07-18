@@ -9,9 +9,11 @@ var divSounds = {
   "red" : new Audio("audio/a_sharp.wav"),
   "yellow" : new Audio("audio/c_sharp.wav"),
   "blue" : new Audio("audio/g_sharp.wav"),
-}
-var errorSound = new Audio("audio/error.mp3")
-var bonusSong = new Audio("audio/ElectronicJam.mp3")
+};
+
+var errorSound = new Audio("audio/error.mp3");
+var bonusSong = new Audio("audio/ElectronicJam.mp3");
+
 
 $("#simon").click(function(evt) {
   evt.preventDefault();
@@ -121,7 +123,11 @@ $("#theme-option-space").click(function(evt) {
   document.querySelector("#score-counter").style.background = "black";
   document.querySelector("#score-counter").style.borderTop = "0px";
 
-  //CHANGE SOUND SOURCE
+
+  divSounds.green = (new Audio("audio/zapThreeToneUp.mp3"));
+  divSounds.red = (new Audio("audio/highUp.mp3"));
+  divSounds.yellow = (new Audio("audio/powerUp8.mp3"));
+  divSounds.blue = (new Audio("audio/phaserUp4.mp3"));
 });
 
 
@@ -155,6 +161,12 @@ $("#theme-option-standard").click(function(evt) {
   document.querySelector("#score-counter").style.background = "white";
   document.querySelector("#score-counter").style.borderTop = "0px";
   document.querySelector("#score-title").style.border = "2px solid black";
+
+
+  divSounds.green = (new Audio("audio/f_sharp.wav"));
+  divSounds.red = (new Audio("audio/a_sharp.wav"));
+  divSounds.yellow = (new Audio("audio/c_sharp.wav"));
+  divSounds.blue = (new Audio("audio/g_sharp.wav"));
 });
 
 
@@ -162,7 +174,7 @@ $("#mode-option-hard").click(function(evt) {
   evt.preventDefault();
 
   clearInterval(timeInterval);
-  timeInterval = 400;
+  timeInterval = 500;
   console.log(timeInterval);
 
   document.querySelector("#mode-option-hard").style.background = "rgb(170,170,170)";
