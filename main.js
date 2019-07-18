@@ -7,7 +7,7 @@ var timeInterval = 1000;
 
 $("#simon").click(function(evt) {
   evt.preventDefault();
-  play();
+  playGame();
 });
 
 
@@ -21,18 +21,23 @@ var blink = (array) => {
   var i = 0;
   var interval = setInterval(function() {
     $("#" + array[i]).fadeTo(200, 0.4).fadeTo(200, 1);
+    $("#audio-" + array[i])[0].play();
     i++;
+    if (i >= array.length) {
+      clearInterval(interval);
+    }
   }, timeInterval);
 };
 
 
-function play() {
+function playGame() {
   createPattern(simonPattern);
   blink(simonPattern);
 
   $(".game-div").off("click").on("click", function(evt) {
     evt.preventDefault();
     $(this).fadeTo(200, 0.4).fadeTo(200, 1);
+    $("#audio-" + $(this).attr("id"))[0].play();
     playerPattern.push($(this).attr("id"));
 
     for (var i = 0; i < playerPattern.length; i++) {
@@ -40,7 +45,7 @@ function play() {
         playerPattern = [];
         score++;
         scoreCounter.innerHTML = score;
-        play();
+        playGame();
         break;
       } else if (playerPattern[i] !== simonPattern[i]) {
         alert(`Your score was ${simonPattern.length - 1}! Click "RESET" to play again!`);
@@ -128,7 +133,7 @@ $("#theme-option-standard").click(function(evt) {
     "background": "rgba(105, 215, 250, 0.8)"
   });
 
-  
+
   document.querySelector("#theme-option-standard").style.background = "rgb(170,170,170)";
   document.querySelector("#theme-option-space").style.background = "white";
   document.querySelector("header").style.color = "black";
