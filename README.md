@@ -46,4 +46,4 @@ Version 1.0.0
 
 ## Authors
 
-* **Austin Regan** - *Initial work* - [GitHub](https://github.com/astnrgn)
+* **Austin Regan** - *Initial work* - [GitHub Profile](https://github.com/astnrgn)
