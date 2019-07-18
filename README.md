@@ -16,8 +16,6 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Installing
 
-
-```
 * [Fork this repository]
 
 * [Clone the forked version to your local repository]
@@ -27,7 +25,7 @@ These instructions will get you a copy of the project up and running on your loc
 * [Open the index.html file in your favorite browser]
 
 * [Have Fun!]
-```
+
 <br/><br/>
 
 <img align="center" src="examples/simon-instruction.gif" width="100%" height="100%">
