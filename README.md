@@ -1,13 +1,17 @@
 # Project Title
 
-This is a recreation of the classic Hasbro electronic memory game Simon, created by Ralph H. Baer and Howard J. Morrison. The goal is to recreate the pattern displayed by the computer for as many rounds as possible. In this version, there are two different themes and modes. Feel free to explore and try out all possibilities! 
+This is a recreation of the classic Hasbro memory game Simon, created by Ralph H. Baer and Howard J. Morrison. The goal is to reproduce the pattern displayed by the computer for as many rounds as possible. In this version, there are two different themes and modes. Feel free to explore and try out all possibilities! 
+
+
+<img src="examples/simon-play.gif" width="40%" height="40%">
+
 
 ## Getting Started
 
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-![Alt Text](example/simon.gif)
+
 
 ### Installing
 
@@ -24,8 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Have Fun!
 ```
 
-
-![Alt Text](example/simon-instruction.gif)
+<img src="example/simon-instruction.gif" width="40%" height="40%">
 
 
 ## Built With
