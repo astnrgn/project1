@@ -3,7 +3,7 @@
 This is a recreation of the classic Hasbro memory game Simon, created by Ralph H. Baer and Howard J. Morrison. The goal is to reproduce the pattern displayed by the computer for as many rounds as possible. In this version, there are two different themes and modes. Feel free to explore and try out all possibilities! 
 
 
-<img src="examples/simon-play.gif" width="40%" height="40%">
+<img src="examples/simon-play.gif" width="50%" height="50%">
 
 
 ## Getting Started
@@ -28,7 +28,7 @@ These instructions will get you a copy of the project up and running on your loc
 * Have Fun!
 ```
 
-<img src="example/simon-instruction.gif" width="40%" height="40%">
+<img src="examples/simon-instruction.gif" width="50%" height="50%">
 
 
 ## Built With
