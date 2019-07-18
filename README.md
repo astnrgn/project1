@@ -13,7 +13,6 @@ This is a recreation of the classic Hasbro memory game Simon, created by Ralph H
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-<br/><br/>
 
 ### Installing
 
@@ -31,7 +30,7 @@ These instructions will get you a copy of the project up and running on your loc
 ```
 <br/><br/>
 
-<img align="center" src="examples/simon-instruction.gif" width="90%" height="100%">
+<img align="center" src="examples/simon-instruction.gif" width="100%" height="100%">
 
 <br/><br/>
 
