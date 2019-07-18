@@ -4,11 +4,50 @@ var simonPattern = [];
 var playerPattern = [];
 var timeInterval = 1000;
 
+var divSounds = {
+  "green" : new Audio("audio/f_sharp.wav"),
+  "red" : new Audio("audio/a_sharp.wav"),
+  "yellow" : new Audio("audio/c_sharp.wav"),
+  "blue" : new Audio("audio/g_sharp.wav"),
+}
+var errorSound = new Audio("audio/error.mp3")
+var bonusSong = new Audio("audio/ElectronicJam.mp3")
 
 $("#simon").click(function(evt) {
   evt.preventDefault();
   playGame();
 });
+
+
+function playGame() {
+  createPattern(simonPattern);
+  blink(simonPattern);
+
+  $(".game-div").off("click").on("click", function(evt) {
+    evt.preventDefault();
+    $(this).fadeTo(200, 0.4).fadeTo(200, 1);
+    var divClicked = $(this).attr("id");
+    divSounds[divClicked].play();
+    playerPattern.push($(this).attr("id"));
+
+    for (var i = 0; i < playerPattern.length; i++) {
+      if (JSON.stringify(simonPattern) == JSON.stringify(playerPattern)) {
+        playerPattern = [];
+        score++;
+        scoreCounter.innerHTML = score;
+        if (score === 20) {
+          bonusSong.play();
+        }
+        playGame();
+        break;
+      } else if (playerPattern[i] !== simonPattern[i]) {
+        errorSound.play();
+        alert(`Your score was ${simonPattern.length - 1}! Click "RESET" to play again!`);
+        break;
+      }
+    }
+  })
+};
 
 
 var createPattern = (array) => {
@@ -21,38 +60,12 @@ var blink = (array) => {
   var i = 0;
   var interval = setInterval(function() {
     $("#" + array[i]).fadeTo(200, 0.4).fadeTo(200, 1);
-    $("#audio-" + array[i])[0].play();
+    divSounds[array[i]].play();
     i++;
     if (i >= array.length) {
       clearInterval(interval);
     }
   }, timeInterval);
-};
-
-
-function playGame() {
-  createPattern(simonPattern);
-  blink(simonPattern);
-
-  $(".game-div").off("click").on("click", function(evt) {
-    evt.preventDefault();
-    $(this).fadeTo(200, 0.4).fadeTo(200, 1);
-    $("#audio-" + $(this).attr("id"))[0].play();
-    playerPattern.push($(this).attr("id"));
-
-    for (var i = 0; i < playerPattern.length; i++) {
-      if (JSON.stringify(simonPattern) == JSON.stringify(playerPattern)) {
-        playerPattern = [];
-        score++;
-        scoreCounter.innerHTML = score;
-        playGame();
-        break;
-      } else if (playerPattern[i] !== simonPattern[i]) {
-        alert(`Your score was ${simonPattern.length - 1}! Click "RESET" to play again!`);
-        break;
-      }
-    }
-  })
 };
 
 
@@ -107,6 +120,8 @@ $("#theme-option-space").click(function(evt) {
   document.querySelector("header").style.color = "white";
   document.querySelector("#score-counter").style.background = "black";
   document.querySelector("#score-counter").style.borderTop = "0px";
+
+  //CHANGE SOUND SOURCE
 });
 
 
