@@ -5,12 +5,11 @@ var playerPattern = [];
 var timeInterval = 1000;
 
 var divSounds = {
-  "green" : new Audio("audio/f_sharp.wav"),
-  "red" : new Audio("audio/a_sharp.wav"),
-  "yellow" : new Audio("audio/c_sharp.wav"),
-  "blue" : new Audio("audio/g_sharp.wav"),
+  "green": new Audio("audio/f_sharp.wav"),
+  "red": new Audio("audio/a_sharp.wav"),
+  "yellow": new Audio("audio/c_sharp.wav"),
+  "blue": new Audio("audio/g_sharp.wav"),
 };
-
 var errorSound = new Audio("audio/error.mp3");
 var bonusSong = new Audio("audio/ElectronicJam.mp3");
 
@@ -30,7 +29,7 @@ function playGame() {
     $(this).fadeTo(200, 0.4).fadeTo(200, 1);
     var divClicked = $(this).attr("id");
     divSounds[divClicked].play();
-    playerPattern.push($(this).attr("id"));
+    playerPattern.push(divClicked);
 
     for (var i = 0; i < playerPattern.length; i++) {
       if (JSON.stringify(simonPattern) == JSON.stringify(playerPattern)) {
@@ -124,10 +123,10 @@ $("#theme-option-space").click(function(evt) {
   document.querySelector("#score-counter").style.borderTop = "0px";
 
 
-  divSounds.green = (new Audio("audio/zapThreeToneUp.mp3"));
-  divSounds.red = (new Audio("audio/highUp.mp3"));
-  divSounds.yellow = (new Audio("audio/powerUp8.mp3"));
-  divSounds.blue = (new Audio("audio/phaserUp4.mp3"));
+  divSounds.green = new Audio("audio/zapThreeToneUp.mp3");
+  divSounds.red = new Audio("audio/highUp.mp3");
+  divSounds.yellow = new Audio("audio/powerUp8.mp3");
+  divSounds.blue = new Audio("audio/phaserUp4.mp3");
 });
 
 
@@ -163,10 +162,10 @@ $("#theme-option-standard").click(function(evt) {
   document.querySelector("#score-title").style.border = "2px solid black";
 
 
-  divSounds.green = (new Audio("audio/f_sharp.wav"));
-  divSounds.red = (new Audio("audio/a_sharp.wav"));
-  divSounds.yellow = (new Audio("audio/c_sharp.wav"));
-  divSounds.blue = (new Audio("audio/g_sharp.wav"));
+  divSounds.green = new Audio("audio/f_sharp.wav");
+  divSounds.red = new Audio("audio/a_sharp.wav");
+  divSounds.yellow = new Audio("audio/c_sharp.wav");
+  divSounds.blue = new Audio("audio/g_sharp.wav");
 });
 
 
