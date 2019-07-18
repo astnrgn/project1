@@ -3,15 +3,16 @@ var score = scoreCounter.innerHTML;
 var simonPattern = [];
 var playerPattern = [];
 var timeInterval = 1000;
-
 var divSounds = {
   "green": new Audio("audio/f_sharp.wav"),
   "red": new Audio("audio/a_sharp.wav"),
   "yellow": new Audio("audio/c_sharp.wav"),
-  "blue": new Audio("audio/g_sharp.wav"),
+  "blue": new Audio("audio/g_sharp.wav")
 };
 var errorSound = new Audio("audio/error.mp3");
 var bonusSong = new Audio("audio/ElectronicJam.mp3");
+
+
 
 
 $("#simon").click(function(evt) {
